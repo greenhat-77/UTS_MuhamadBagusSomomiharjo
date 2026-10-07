@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk | Lintasan</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="auth">
+
+    
+    <section class="auth__art" aria-labelledby="art-title">
+      <div class="auth__art-content">
+        <h2 id="art-title" class="auth__art-title">Outfit Klasik dan Nyaman.</h2>
+        <p class="auth__art-text">Temukan outfit vintage menarik dan nyaman di Elwood Vintage.</p>
+      </div>
+    </section>
+
+    
+    <section class="auth__panel" aria-labelledby="form-title">
+      <div class="auth__box">
+        <a class="brand" href="#" aria-label="Lintasan, ke beranda">
+          <img src="../img/ElwoodLogo.png" alt="" width="40" height="40">
+          <span class="brand__name">Elwood</span>
+        </a>
+
+        <h1 id="form-title" class="auth__title">Masuk ke akunmu</h1>
+        <p class="auth__subtitle">Belum punya akun? <a class="link" href="#">Daftar gratis</a></p>
+
+        <button type="button" class="btn btn--sso">
+          <img src="../img/googlelogo.png" alt="" width="20" height="20">
+          Masuk dengan Google
+        </button>
+
+        <div class="divider" role="separator"><span>atau</span></div>
+
+        <form class="form" action="#" method="post">
+          <div class="field">
+            <label for="email">Email atau username</label>
+            <input type="text" id="email" name="email" autocomplete="username" placeholder="nama@email.com" required>
+          </div>
+
+          <div class="field">
+            <div class="field__row">
+              <label for="password">Password</label>
+              <a class="link link--small" href="#">Lupa Password?</a>
+            </div>
+            <div class="field__password">
+              <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Minimal 8 karakter" required>
+              <button type="button" class="icon-btn" id="toggle-password" aria-label="Tampilkan password" aria-pressed="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="check">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Ingat Saya</label>
+          </div>
+
+          <button type="submit" class="btn btn--primary"> Masuk </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+:root {
+  --ink: #1d1b2e;
+  --muted: #5a566e;
+  --line: #cfcce0;
+  --surface: #ffffff;
+  --brand: #3d31b8;
+  --brand-dark: #2d2390;
+  --focus: #ff7a6b;
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--surface);
+}
+img { max-width: 100%; display: block; }
+a, button, input { font: inherit; }
+
+.auth {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__art {
+  position: relative;
+  display: none;                     
+  min-height: 220px;
+  padding: 2rem;
+  color: #fff;
+  background: #14103f url("../img/Elwood.jpg") center / cover no-repeat;
+}
+.auth__art-content { position: relative; max-width: 28rem; }
+.auth__art-title {
+  margin: 0 0 .75rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.auth__art-text { margin: 0; color: #e8e6fa; }
+
+.auth__panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+.auth__box { width: 100%; max-width: 24rem; }
+
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  margin-bottom: 2rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand__name { font-size: 1.25rem; font-weight: 700; }
+
+.auth__title {
+  margin: 0 0 .5rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.auth__subtitle { margin: 0 0 1.5rem; color: var(--muted); }
+
+
+.link { color: var(--brand); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.link:hover { color: var(--brand-dark); }
+.link--small { font-size: .875rem; }
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+  width: 100%;
+  padding: .8125rem 1rem;
+  border: 1px solid transparent;
+  border-radius: .625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color .15s, border-color .15s;
+}
+.btn--sso { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn--sso:hover { background: #f4f3fb; border-color: #a9a5c7; }
+.btn--primary { background: var(--brand); color: #fff; margin-top: .5rem; }
+.btn--primary:hover { background: var(--brand-dark); }
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--muted);
+  font-size: .875rem;
+}
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+
+.field { margin-bottom: 1.25rem; }
+.field label { display: block; margin-bottom: .375rem; font-weight: 600; font-size: .9375rem; }
+.field__row { display: flex; align-items: baseline; justify-content: space-between; }
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: .75rem .875rem;
+  border: 1px solid #8b87a8;
+  border-radius: .625rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+input::placeholder { color: #6b6785; }
+
+.field__password { position: relative; }
+.field__password input { padding-right: 3rem; }
+.icon-btn {
+  position: absolute;
+  top: 50%;
+  right: .375rem;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: .5rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.icon-btn:hover { color: var(--ink); background: #efeef8; }
+
+.check { display: flex; align-items: center; gap: .625rem; margin-bottom: 1rem; }
+.check input { width: 1.125rem; height: 1.125rem; accent-color: var(--brand); }
+.check label { font-size: .9375rem; }
+
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+
+@media (min-width: 768px) {
+  .auth__art { display: flex; align-items: flex-end; min-height: 260px; }
+  .auth__art-title { font-size: 2rem; }
+}
+
+
+@media (min-width: 1024px) {
+  .auth { flex-direction: row; }
+  .auth__art { flex: 1 1 55%; min-height: 100vh; padding: 3.5rem; }
+  .auth__art-title { font-size: 2.75rem; }
+  .auth__panel { flex: 1 1 45%; padding: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
